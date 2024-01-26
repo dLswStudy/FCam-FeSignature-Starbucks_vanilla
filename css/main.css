@@ -12,18 +12,19 @@ img{
 a{
     text-decoration: none;
 }
-
+.inner{
+    width: 1100px;
+    margin: 0 auto; /*수평 가운데 정렬*/
+    position: relative;
+}
 
 /* HEADER */
 header{
     background-color: #f6f5f0;
     border-bottom: 1px solid #c8c8c8;
 }
-header .inner{
-    width: 1100px;
+header > .inner{
     height: 120px;
-    margin: 0 auto;
-    position: relative;
 }
 header .logo{
     height: 75px;
@@ -131,10 +132,39 @@ header .main-menu .item:hover .item__contents{
     display: block;
 }
 header .main-menu .item .item__contents .contents__menu{
-    background-color: red;
-    height: 200px;
+    background-color: #2C2A29;
+}
+header .main-menu .item .item__contents .contents__menu > ul{
+    display: flex;
+    padding: 20px 0;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li{
+    width: 220px;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li h4{
+    padding: 3px 0 12px 0;
+    font-size: 14px;
+    color: #ffffff;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li{
+    padding: 5px 0;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover{
+    color: #669900;
 }
 header .main-menu .item .item__contents .contents__texture{
-    background-color: orange;
-    height: 100px;
+    padding: 26px 0;
+    font-size: 12px;
+    background-image: url("../images/main_menu_pattern.jpg");
+}
+header .main-menu .item .item__contents .contents__texture h4{
+    color: #999;
+    font-weight: 900;
+}
+header .main-menu .item .item__contents .contents__texture p{
+    color: #64a70b;
+    margin: 4px 0 14px;
 }
