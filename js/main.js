@@ -128,3 +128,20 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15)
 floatingObject('.floating2', .5, 15)
 floatingObject('.floating3', 1.5, 20)
+
+
+/**
+ * 요소가 화면에 보여짐 여부에 따른 요소 관리
+ */
+// 관리할 요소들 검색!
+const spyEls = document.querySelectorAll('section.scroll-spy')
+// 요소들 반복 처리!
+spyEls.forEach(function (spyEl) {
+    new ScrollMagic
+        .Scene({ // 감시할 장면(Scene)을 추가
+            triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+            triggerHook: .8 // 뷰포트(맨 위:0~ 맨 아래:1 일 때)의 80% 지점에서 triggerElement 를 감시.
+        })
+        .setClassToggle(spyEl, 'show') // 트리거요소가 훅 위치에 걸리면 show 클래스 추가
+        .addTo(new ScrollMagic.Controller()) // 컨트롤러에 장면을 할당(필수!)
+})
